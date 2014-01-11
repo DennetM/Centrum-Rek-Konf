@@ -1,0 +1,10 @@
+Je¿eli ktoœ musi uruchomiæ bazê danych a nie wie jak to zrobiæ:
+
+1. Plik IO-v2.bak musi byæ w tym samym folderze co plik Database. Czyli najlepiej bêdzie jak przerzucisz plik IO-v2.bak to folderu IO.
+2. Potem ³¹czysz siê z Microsoft SQL Server
+3. Z menu po lewej rozwijasz Databases, a nastêpnie System Databases. 
+4. Z menu rozwijanego wybierasz Restore Databese...
+5. Zaznaczasz Device ---> Add 
+6. Wyszukujesz folder IO (ten w którym masz zapisane pliki) oraz zaznaczasz filtrowanie formatów plików na "ALL FILES(*)"
+7. Wybierasz oba pliki: IO-v2.bak oraz Databeses, klikasz OK i póŸniej jeszcze raz OK. 
+8. I teraz powinna Ci siê pojawiæ baza na liœæie - upewnij siê, ¿e jest zaznaczony przy niej checkbox (Restore) i klikasz OK.

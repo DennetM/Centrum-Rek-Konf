@@ -18,7 +18,7 @@ import com.j256.ormlite.support.ConnectionSource;
 public class DbManager  {
 
 	// Proper db address should be placed here.
-	private final String DATABASE_URL = "jdbc:sqlserver://localhost:1434;databaseName=IO;integratedSecurity=true;";
+	private final String DATABASE_URL = "jdbc:sqlserver://localhost;databaseName=IO;integratedSecurity=true;";
 	
 	private ConnectionSource connectionSource;
 	

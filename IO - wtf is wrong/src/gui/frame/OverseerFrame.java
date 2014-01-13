@@ -82,11 +82,6 @@ public class OverseerFrame extends javax.swing.JDialog {
 			thisLayout.setVerticalGroup(thisLayout.createSequentialGroup()
 				.addContainerGap(34, 34)
 				.addComponent(lista_rozwijana_nadzorcow, GroupLayout.PREFERRED_SIZE, GroupLayout.PREFERRED_SIZE, GroupLayout.PREFERRED_SIZE)
-				.addComponent(getJCheckBox1(), GroupLayout.PREFERRED_SIZE, GroupLayout.PREFERRED_SIZE, GroupLayout.PREFERRED_SIZE)
-				.addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
-				.addComponent(getJCheckBox2(), GroupLayout.PREFERRED_SIZE, GroupLayout.PREFERRED_SIZE, GroupLayout.PREFERRED_SIZE)
-				.addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
-				.addComponent(getJCheckBox3(), GroupLayout.PREFERRED_SIZE, 20, GroupLayout.PREFERRED_SIZE)
 				.addGap(81)
 				.addGroup(thisLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
 				    .addComponent(przycisk_anuluj, GroupLayout.Alignment.BASELINE, GroupLayout.PREFERRED_SIZE, 29, GroupLayout.PREFERRED_SIZE)
@@ -101,21 +96,12 @@ public class OverseerFrame extends javax.swing.JDialog {
 				    .addComponent(lista_rozwijana_nadzorcow, GroupLayout.Alignment.LEADING, GroupLayout.PREFERRED_SIZE, 211, GroupLayout.PREFERRED_SIZE))
 				.addGroup(thisLayout.createParallelGroup()
 				    .addGroup(GroupLayout.Alignment.LEADING, thisLayout.createSequentialGroup()
-				        .addComponent(getJCheckBox1(), GroupLayout.PREFERRED_SIZE, 123, GroupLayout.PREFERRED_SIZE)
-				        .addGap(0, 27, Short.MAX_VALUE))
-				    .addGroup(GroupLayout.Alignment.LEADING, thisLayout.createSequentialGroup()
-				        .addComponent(getJCheckBox2(), GroupLayout.PREFERRED_SIZE, 123, GroupLayout.PREFERRED_SIZE)
-				        .addGap(0, 27, Short.MAX_VALUE))
-				    .addGroup(GroupLayout.Alignment.LEADING, thisLayout.createSequentialGroup()
-				        .addComponent(getJCheckBox3(), GroupLayout.PREFERRED_SIZE, 123, GroupLayout.PREFERRED_SIZE)
-				        .addGap(0, 27, Short.MAX_VALUE))
-				    .addGroup(GroupLayout.Alignment.LEADING, thisLayout.createSequentialGroup()
 				        .addGap(0, 42, Short.MAX_VALUE)
 				        .addComponent(przycisk_anuluj, GroupLayout.PREFERRED_SIZE, 108, GroupLayout.PREFERRED_SIZE)))
 				.addContainerGap());
 			thisLayout.linkSize(SwingConstants.VERTICAL, new Component[] {przycisk_anuluj, getPrzycisk_akceptuj()});
 			thisLayout.linkSize(SwingConstants.HORIZONTAL, new Component[] {przycisk_anuluj, getPrzycisk_akceptuj()});
-			setSize(400, 300);
+			setSize(350, 200);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -146,29 +132,6 @@ public class OverseerFrame extends javax.swing.JDialog {
 		return przycisk_akceptuj;
 	}
 	
-	private JCheckBox getJCheckBox1() {
-		if(jCheckBox1 == null) {
-			jCheckBox1 = new JCheckBox();
-			jCheckBox1.setText("Nadzorca 1");
-		}
-		return jCheckBox1;
-	}
-	
-	private JCheckBox getJCheckBox2() {
-		if(jCheckBox2 == null) {
-			jCheckBox2 = new JCheckBox();
-			jCheckBox2.setText("Nadzorca 2");
-		}
-		return jCheckBox2;
-	}
-	
-	private JCheckBox getJCheckBox3() {
-		if(jCheckBox3 == null) {
-			jCheckBox3 = new JCheckBox();
-			jCheckBox3.setText("Nadzorca 3");
-		}
-		return jCheckBox3;
-	}
 	
 	private AbstractAction getAkcja_akceptuj() {
 		if(akcja_akceptuj == null) {

@@ -30,6 +30,7 @@ import com.toedter.calendar.JDateChooser;
 
 import conteners.RoomEquipment;
 import controler.AdminEventControler;
+import controler.GuestControler;
 
 @SuppressWarnings("serial")
 public class GuestReservPanel extends JPanel {
@@ -213,22 +214,25 @@ public class GuestReservPanel extends JPanel {
 		public void actionPerformed(ActionEvent arg0) {
 
 			//TODO potrzebna jeszcze walidacja i komunikaty
-			List<Guest> result = new ArrayList<>();
-			List<Event> result2 = new ArrayList<>();
+			List<Guest> result2 = new ArrayList<>();
+			List<Event> result = new ArrayList<>();
 			Event event = new Event();
 			Guest guest = new Guest();
 			
 			String imie = imieTextField.getText().trim();
-			guest.setName(imie);
 			String nazwisko = nazwiskoTextField.getText().trim();
-			guest.setSurname(nazwisko);
-			event.setName(nazwisko);
 			String telefon = telefonTextField.getText().trim();
-			guest.setTelephoneNumber(telefon);
 			String email = emailTextField.getText().trim();
-			guest.setEmail(email);
-			result.add(guest);
 			
+			guest.setName(imie);
+			guest.setSurname(nazwisko);
+			guest.setTelephoneNumber(telefon);
+			guest.setEmail(email);
+			result2.add(guest);
+			
+			event.setName(nazwisko);
+			GuestControler control = new GuestControler();
+			control.sendGuest(guest);
 			
 			
 			int roomNo = (int) comboBox.getSelectedItem();
@@ -246,12 +250,13 @@ public class GuestReservPanel extends JPanel {
 			Date endDate = dateChooser.getDate();
 			Date toTime = (Date) toTimeSpinner.getValue();
 			endDate = buildDate(endDate, toTime);
-			event.setStartDate(endDate);
-
-			if (!Program.testMode) {
-				AdminEventControler control = new AdminEventControler();
-				control.sendEvent(event);
-			}
+			event.setEndDate(endDate);
+			event.setIsApproved(false);
+			event.setGuestId(control.getGuestId(guest));
+			event.setPersonnelId(1);
+			
+			AdminEventControler control2 = new AdminEventControler();
+			control2.sendEvent(event);
 
 			//TODO komunikat o wyslaniu zgloszenia
 

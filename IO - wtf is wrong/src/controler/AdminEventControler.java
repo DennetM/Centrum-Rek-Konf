@@ -29,7 +29,7 @@ public class AdminEventControler extends BaseControler {
 		return result;
 	}
 
-	public List<Event> getListEventTest() {
+	public List<Event> getListEventTest() {//Metoda testowa
 		List<Event> result = new ArrayList<>();
 
 		Event event = new Event();

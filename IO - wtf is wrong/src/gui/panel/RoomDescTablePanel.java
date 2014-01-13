@@ -51,9 +51,9 @@ public class RoomDescTablePanel extends JPanel {
 		scrollPane.setViewportView(table);
 	}
 
-	// public void reloadData(Room room) {
-	// reloadData(room, null);
-	// }
+	 //public void reloadData(Room room) {
+	 //reloadData(room, null);
+	 //}
 
 	/**
 	 * Prze³adowanie danych w tabelce

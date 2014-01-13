@@ -49,14 +49,14 @@ public class RoomFilter implements Filter<RoomEquipment> {
 			}
 
 			if (var.containsKey("MAX_PRICE")) {
-				Integer value = (Integer) var.get("MAX_PRICE");
+				Float value = (Float) var.get("MAX_PRICE");
 				if (room.getPrice() > value) {
 					continue;
 				}
 			}
 
 			if (var.containsKey("MIN_PRICE")) {
-				Integer value = (Integer) var.get("MIN_PRICE");
+				Float value = (Float) var.get("MIN_PRICE");
 				if (room.getPrice() < value) {
 					continue;
 				}

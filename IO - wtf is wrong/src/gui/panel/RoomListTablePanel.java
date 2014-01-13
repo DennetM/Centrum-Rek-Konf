@@ -33,7 +33,7 @@ public class RoomListTablePanel extends JPanel {
 	private JTable table;
 	private DefaultTableModel model;
 	private RoomDescTablePanel descHandle; // uchwyt do panelu tworzacy
-											// powiazanie z panelemszczegu³ow
+											// powiazanie z panelemszczego³ow
 											// pokoju
 	private EventListTablePanel eventHandle;
 	private List<RoomEquipment> listRooms; // List obiektów Roomi pomocniczodla

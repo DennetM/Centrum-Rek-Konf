@@ -93,6 +93,7 @@ public class AdminEventControler extends BaseControler {
 	public void cancelEvent(Event event) {
 
 		try {
+			dbManager.eventDao.delete(event);
 			dbManager.eventDao.update(event);
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -104,6 +105,16 @@ public class AdminEventControler extends BaseControler {
 	public void sendEvent(Event event) {
 		try {
 			dbManager.eventDao.create(event);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+	}
+	
+	public void updateEvent(Event event) {
+		try {
+			dbManager.eventDao.update(event);
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

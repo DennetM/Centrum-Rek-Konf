@@ -88,7 +88,6 @@ public class EventListTablePanel extends JPanel {
 	}
 
 	public void reloadDateIdRoom(int idRoom) {
-
 		tableData.clear();
 		if (listEvents != null) {
 			tempIdRoom = idRoom;

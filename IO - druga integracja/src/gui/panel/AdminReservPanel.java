@@ -92,7 +92,19 @@ public class AdminReservPanel extends JPanel {
 				Event event = eventListTablePanel.getEventForID(eventid);
 				if (event != null) {
 					// *przejscie do panelu rezerwacji i przeladowanie listy
-					OverseerFrame.main(null);
+					//OverseerFrame.main(null);
+					
+					AdminEventControler control = new AdminEventControler();
+					event.setIsApproved(true);
+
+					if (!Program.testMode) { // tryb testowy niejest podlaczony
+												// do bazy
+						control.updateEvent(event);
+					}
+					eventListTablePanel.reloadDateIdRoom(event.getRoomId());
+					Date from = dateFromFilterChooser.getDate();
+					Date to = dateToFIlterChooser.getDate();
+					eventListTablePanel.reloadFilterDate(from, to);
 				}
 
 			}
@@ -123,11 +135,15 @@ public class AdminReservPanel extends JPanel {
 												// do bazy
 						control.cancelEvent(event);
 					}
+					eventListTablePanel.getListEvents().remove(index);
 
+					
 					eventListTablePanel.reloadDateIdRoom(event.getRoomId());
 					Date from = dateFromFilterChooser.getDate();
 					Date to = dateToFIlterChooser.getDate();
 					eventListTablePanel.reloadFilterDate(from, to);
+					event = null;
+					//eventListTablePanel.reloadData(eventListTablePanel.getListEvents());
 				}
 			}
 		}
